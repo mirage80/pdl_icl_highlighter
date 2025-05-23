@@ -1,0 +1,73 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Procedural Description Language",
+  "scopeName": "source.pdl",
+  "fileTypes": ["pdl"],
+  "patterns": [
+    { "include": "#main" }
+  ],
+  "repository": {
+    "main": {
+      "patterns": [
+        { "include": "#comments" },
+        { "include": "#keywords" },
+        { "include": "#identifiers" },
+        { "include": "#numbers" },
+        { "include": "#strings" },
+        {
+          "match": "[{}();,]",
+          "name": "punctuation.pdl"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line.double-slash.pdl"
+        },
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block.pdl"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(iProc|iProcsForModule|iWrite|iRead|iApply|iCall|iSet|iGet|iNote|iScan|iReset|iWait|iLoop|iIf|iElse|iWhile|iReturn|iEnable|iDisable)\\b",
+          "name": "keyword.control.pdl"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
+          "name": "variable.other.pdl"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b\\d+\\b",
+          "name": "constant.numeric.decimal.pdl"
+        },
+        {
+          "match": "\\b0x[0-9A-Fa-f]+\\b",
+          "name": "constant.numeric.hex.pdl"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "match": "\"[^\"]*\"",
+          "name": "string.quoted.double.pdl"
+        }
+      ]
+    }
+  }
+}

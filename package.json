@@ -1,0 +1,39 @@
+{
+  "name": "pdl-icl-highlighter",
+  "displayName": "PDL & ICL Highlighter",
+  "description": "Syntax highlighting for IEEE 1687 ICL and PDL files",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "icl",
+        "aliases": ["ICL", "icl"],
+        "extensions": [".icl"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "pdl",
+        "aliases": ["PDL", "pdl"],
+        "extensions": [".pdl"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "icl",
+        "scopeName": "source.icl",
+        "path": "./syntaxes/icl.tmLanguage.json"
+      },
+      {
+        "language": "pdl",
+        "scopeName": "source.pdl",
+        "path": "./syntaxes/pdl.tmLanguage.json"
+      }
+    ]
+  }
+}

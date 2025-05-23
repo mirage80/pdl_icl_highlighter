@@ -1,0 +1,42 @@
+$schema: 'https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json'
+name: Instrument Connectivity Language
+scopeName: source.icl
+fileTypes:
+  - icl
+patterns:
+  - include: '#main'
+repository:
+  main:
+    patterns:
+      - include: '#comments'
+      - include: '#keywords'
+      - include: '#identifiers'
+      - include: '#numbers'
+      - include: '#strings'
+      - match: '[{}();,]'
+        name: punctuation.icl
+  comments:
+    patterns:
+      - match: '//.*$'
+        name: comment.line.double-slash.icl
+      - begin: '/\*'
+        end: '\*/'
+        name: comment.block.icl
+  keywords:
+    patterns:
+      - match: '\b(module|port|instance|connect|scan|segment|access|select|reset|tdr|tap|si|so|ws|pdr|idr|dr|ir|length|width|cell|hierarchy|include)\b'
+        name: keyword.control.icl
+  identifiers:
+    patterns:
+      - match: '\b[A-Za-z_][A-Za-z0-9_]*\b'
+        name: variable.other.icl
+  numbers:
+    patterns:
+      - match: '\b\d+\b'
+        name: constant.numeric.decimal.icl
+      - match: '\b0x[0-9A-Fa-f]+\b'
+        name: constant.numeric.hex.icl
+  strings:
+    patterns:
+      - match: '"[^"]*"'
+        name: string.quoted.double.icl

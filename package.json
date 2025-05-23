@@ -3,9 +3,13 @@
   "displayName": "PDL & ICL Highlighter",
   "description": "Syntax highlighting for IEEE 1687 ICL and PDL files",
   "version": "0.0.1",
-  "publisher": "your-name",
+  "publisher": "Sawyer Mirage",
   "engines": {
     "vscode": "^1.50.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mirage80/pdl_icl_highlighter"
   },
   "categories": ["Programming Languages"],
   "contributes": {

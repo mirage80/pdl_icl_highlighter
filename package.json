@@ -3,7 +3,7 @@
   "displayName": "PDL & ICL Highlighter",
   "description": "Syntax highlighting for IEEE 1687 ICL and PDL files",
   "version": "0.0.1",
-  "publisher": "Sawyer Mirage",
+  "publisher": "Sawyer",
   "engines": {
     "vscode": "^1.50.0"
   },
@@ -11,19 +11,31 @@
     "type": "git",
     "url": "https://github.com/mirage80/pdl_icl_highlighter"
   },
-  "categories": ["Programming Languages"],
+  "categories": [
+    "Programming Languages"
+  ],
   "contributes": {
     "languages": [
       {
         "id": "icl",
-        "aliases": ["ICL", "icl"],
-        "extensions": [".icl"],
+        "aliases": [
+          "ICL",
+          "icl"
+        ],
+        "extensions": [
+          ".icl"
+        ],
         "configuration": "./language-configuration.json"
       },
       {
         "id": "pdl",
-        "aliases": ["PDL", "pdl"],
-        "extensions": [".pdl"],
+        "aliases": [
+          "PDL",
+          "pdl"
+        ],
+        "extensions": [
+          ".pdl"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -39,5 +51,8 @@
         "path": "./syntaxes/pdl.tmLanguage.json"
       }
     ]
+  },
+  "dependencies": {
+    "glob": "^11.0.2"
   }
 }

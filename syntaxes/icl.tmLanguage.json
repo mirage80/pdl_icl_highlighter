@@ -23,6 +23,10 @@
     "comments": {
       "patterns": [
         {
+          "match": "#.*$",
+          "name": "comment.line.number-sign.icl"
+        },
+        {
           "match": "//.*$",
           "name": "comment.line.double-slash.icl"
         },
@@ -36,7 +40,7 @@
     "keywords": {
       "patterns": [
         {
-          "match": "\\b(module|port|instance|connect|scan|segment|access|select|reset|tdr|tap|si|so|ws|pdr|idr|dr|ir|length|width|cell|hierarchy|include)\\b",
+          "match": "\\b(Instance|ScanChain|ScanInterface|AccessLink|Port|Register|Segment|Selector|Group|Vector|Address|DefaultAccess|UseInstance|UseScanInterface|UseAccessLink)\\b",
           "name": "keyword.control.icl"
         }
       ]
